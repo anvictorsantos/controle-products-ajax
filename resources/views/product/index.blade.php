@@ -90,7 +90,7 @@
             $("#product_id").val('');
             $("#productForm").val("reset");
             $("#modelHeading").val("Criar Novo Produto");
-            $("#ajaxModel").val("show");
+            $("#ajaxModel").modal("show");
         });
 
         $("body").on("click", ".editProduct", function() {
@@ -98,7 +98,7 @@
             $.get("{{ route('product.index') }}" + "/" + product_id + "/edit", function(data) {
                 $("#modelHeading").html("Editar Produto");
                 $("#saveBtn").val("edit-user");
-                $("#ajaxModel").model("show");
+                $("#ajaxModel").modal("show");
                 $("#product_id").val(data.id);
                 $("#name").val(data.name);
                 $("#detail").val(data.detail);
